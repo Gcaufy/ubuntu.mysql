@@ -2,7 +2,7 @@ FROM ubuntu
 
 MAINTAINER Gcaufy <gcaufy@gmail.com>
 
-RUN apt-get update && apt-get -yq install mysql-server-5.6 pwgen
+RUN apt-get update && apt-get -yq install mysql-server-5.7 pwgen
 
 RUN rm -rf /var/lib/apt/lists/* && rm -rf /var/lib/mysql/*
 
