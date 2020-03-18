@@ -14,6 +14,7 @@ ADD scripts/import_sql.sh /import_sql.sh
 ADD scripts/run.sh /run.sh
 
 RUN chmod 755 /*.sh
+RUN chown -R mysql.mysql /var/log/mysql
 
 ENV MYSQL_USER admin
 ENV MYSQL_PASS **Random**
@@ -23,7 +24,7 @@ ENV REPLICATION_SLAVE **False**
 ENV REPLICATION_USER replica
 ENV REPLICATION_PASS replica
 
-VOLUME ["/var/lib/mysql", "/var/logs/mysql"]
+VOLUME ["/var/lib/mysql", "/var/log/mysql"]
 
 EXPOSE 3306
 CMD ["/run.sh"]
